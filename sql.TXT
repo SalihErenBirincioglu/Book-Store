@@ -1,0 +1,66 @@
+CREATE TABLE books(
+author VARCHAR(128),
+title VARCHAR(128),
+type VARCHAR(16),
+year CHAR(4),
+id INT UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY);
+
+CREATE TABLE users (
+  usersId int(11) PRIMARY KEY AUTO_INCREMENT NOT NULL,
+  usersName varchar(128) NOT NULL,
+  usersEmail varchar(128) NOT NULL,
+  usersUid varchar(128) NOT NULL,
+  usersPwd varchar(128) NOT NULL
+);
+
+
+CREATE TABLE cart(
+id INT UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,
+user_id CHAR(4),
+book_id CHAR(4));
+
+
+
+INSERT INTO books(author, title, type, year)
+VALUES('Mark Twain','The Adventures of Tom Sawyer','Fiction','1876');
+INSERT INTO books(author, title, type, year)
+VALUES('Jane Austen','Pride and Prejudice','Fiction','1811');
+INSERT INTO books(author, title, type, year)
+VALUES('Charles Darwin','The Origin of Species','Non-Fiction','1856');
+INSERT INTO books(author, title, type, year)
+VALUES('Charles Dickens','The Old Curiosity Shop','Fiction','1841');
+INSERT INTO books(author, title, type, year)
+VALUES('William Shakespeare','Romeo and Juliet','Play','1594');
+
+
+INSERT INTO books(author, title, type, year)
+VALUES('J.K. Rowling','Harry Potter and the Sorcerers / Philosophers Stone','Fiction','1997');
+
+INSERT INTO books(author, title, type, year)
+VALUES('J.K. Rowling','Harry Potter and the Chamber of Secrets','Fiction','1998');
+
+INSERT INTO books(author, title, type, year)
+VALUES('J.K. Rowling','Harry Potter and the Prisoner of Azkaban','Fiction','1999');
+
+INSERT INTO books(author, title, type, year)
+VALUES('Franz Kafka','The Trial','Non-Fiction','1925');
+
+INSERT INTO books(author, title, type, year)
+VALUES('Franz Kafka ','The Castle','Non-Fiction','1926');
+
+INSERT INTO books(author, title, type, year)
+VALUES('Franz Kafka ','America','Non-Fiction','1927');
+
+INSERT INTO books(author, title, type, year)
+VALUES('William Shakespeare','Romeo and Juliet','Play','1594');
+
+INSERT INTO books(author, title, type, year)
+VALUES('Charles Dickens','Oliver Twist','Non-Fiction','1837');
+
+INSERT INTO books(author, title, type, year)
+VALUES('Charles Dickens','David Copperfield','Non-Fiction','1850');
+
+
+SELECT * FROM books 
+INNER JOIN cart 
+        ON books.id=cart.book_id WHERE user_id=1;
